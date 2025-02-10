@@ -12,18 +12,26 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Header />
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/Register" element={<Register />} />
+        <Routes>
+          <Route path="/" element={
+            <>
+              <Header />
+              <Home />
+              <Footer />
+            </>
+          } />
+          <Route path="/login" element={<Login />} />
+          <Route path="/Register" element={<Register />} />
 
-            {/* <Route path="/dashboard" element={<ProtectedRoute component={Dashboard} />} /> */}
-            <Route path="/dashboard" element={<Dashboard />} />
-          </Routes>
-        </main>
-        <Footer />
+          {/* <Route path="/dashboard" element={<ProtectedRoute component={Dashboard} />} /> */}
+          <Route path="/dashboard" element={
+            <>
+              <Header />
+              <Dashboard />
+              <Footer />
+            </>
+          } />
+        </Routes>
       </div>
     </Router>
   );
